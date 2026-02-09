@@ -5,6 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOHS</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ==========================
+           About Section
+        ========================== */
+        .about {
+            padding: 80px 20px;
+            background-color: #f8f9fa;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap; /* For mobile responsiveness */
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-image img {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .about-text h2 {
+                font-size: 28px;
+            }
+
+            .about-text p {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -18,8 +79,8 @@
                 <ul class="nav-list">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#strands">Strands</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
                     <li><a href="#developer">Developer</a></li>
                 </ul>
                 <button class="menu-btn" id="menu-btn">☰</button>
@@ -28,7 +89,7 @@
     </header>
 
     <!-- Slider Section -->
-    <section class="slider">
+    <section class="slider" id="home">
         <div class="slides">
             <div class="slide" id="banner1">
                 <div class="slide-content">
@@ -58,6 +119,23 @@
             <span class="dot active"></span>
             <span class="dot"></span>
             <span class="dot"></span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container about-container">
+            <div class="about-image">
+                <img src="images/nohs_about.jpg" alt="NOHS School Building">
+            </div>
+            <div class="about-text">
+                <h2>About NOHS</h2>
+                <p>
+                    Negros Occidental High School (NOHS) is a premier educational institution committed to excellence in education. 
+                    With a dedicated faculty, state-of-the-art facilities, and a focus on holistic student development, NOHS 
+                    nurtures young minds to achieve academic and personal success.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -112,6 +190,18 @@
         const navList = document.querySelector('.nav-list');
         menuBtn.addEventListener('click', () => {
             navList.classList.toggle('active');
+        });
+
+        // Smooth scroll for navigation links
+        const navLinks = document.querySelectorAll('.nav-list a[href^="#"]');
+        navLinks.forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+                // Close mobile menu after click
+                navList.classList.remove('active');
+            });
         });
 
         // Slider JS
