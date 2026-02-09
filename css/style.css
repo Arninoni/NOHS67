@@ -1,6 +1,6 @@
-/* styles.css */
-
-/* Global Styles */
+/* ==========================
+   Global Styles
+========================== */
 * {
     margin: 0;
     padding: 0;
@@ -17,12 +17,14 @@ body {
     color: #333;
 }
 
+/* Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+/* Buttons */
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -38,12 +40,14 @@ body {
     transform: translateY(-2px);
 }
 
-/* Header Styles */
+/* ==========================
+   Header Styles
+========================== */
 .header {
     position: sticky;
     top: 0;
     background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 1000;
 }
 
@@ -55,26 +59,24 @@ body {
 }
 
 .logo {
-    display: flex;  /* Aligns image and text side by side */
-    align-items: center;  /* Centers them vertically */
-    gap: 80px;  /* Space between image and text */
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .logo-img {
-    height: 50px;  /* Smaller image size */
-    width: auto;  /* Maintains aspect ratio */
+    height: 50px;
+    width: auto;
 }
 
 .logo h2 {
     font-size: 24px;
     color: #333;
-    margin: 0;  /* Removes default margin */
 }
 
 .nav-list {
     display: flex;
     list-style: none;
-    justify-content: flex-end;  /* Right-aligns the navigation links */
 }
 
 .nav-list li {
@@ -83,7 +85,7 @@ body {
 
 .nav-list a {
     text-decoration: none;
-    color: #333;
+    color: black;
     font-weight: bold;
     transition: color 0.3s ease;
 }
@@ -100,47 +102,89 @@ body {
     cursor: pointer;
 }
 
-/* Hero Banner Styles (First Banner - Maroon BG) */
-.hero {
-    background-image: url('../images/nohsbanner1.jpg'); background-size: cover; */
-    /* Alternative: background-image: url('../images/your-banner-image.jpg'); background-size: cover; */
-    height: 90vh;  /* Longer banner height */
+/* ==========================
+   Slider Styles
+========================== */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #fff;
 }
 
-.hero-content h1 {
+#banner1 {
+    background-image: url('../images/nohsbanner1.jpg');
+}
+
+#banner2 {
+    background-image: url('../images/nohsbanner2.png');
+}
+
+.slide-content {
+    color: #fff;
+    background-color: rgba(0,0,0,0.4);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.slide-content h1 {
     font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.slide-content p {
+    font-size: 24px;
     margin-bottom: 20px;
 }
 
-.hero-content p {
-    font-size: 24px;
-    margin-bottom: 30px;
+.dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-/* Second Banner Styles (White BG with text on the right) */
-.second-banner {
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
     background-color: #fff;
-    padding: 50px 0;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
 }
 
-.second-banner .container {
-    display: flex;
-    justify-content: center; /* Text on the right */
-    align-items: center;
+.dot.active {
+    opacity: 1;
 }
 
-.banner-text h2 {
-    font-size: 36px;
-    color: #333;
-    text-align: right;
-}
-
-/* Cards Section Styles */
+/* ==========================
+   Cards Section
+========================== */
 .cards-section {
     padding: 50px 0;
     background-color: #f8f9fa;
@@ -161,19 +205,19 @@ body {
 .card {
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .card img {
     width: 100%;
-    height: 200px;
+    height: 200px; /* Fixed height for uniformity */
     object-fit: cover;
 }
 
@@ -183,15 +227,17 @@ body {
 }
 
 .card p {
-    padding: 0 20px;
+    padding: 0 20px 20px 20px;
     color: #666;
 }
 
 .card .btn {
-    margin: 20px;
+    margin: 0 20px 20px 20px;
 }
 
-/* Footer Styles */
+/* ==========================
+   Footer Styles
+========================== */
 .footer {
     background-color: #333;
     color: #fff;
@@ -199,20 +245,15 @@ body {
     text-align: center;
 }
 
-.footer .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
 .footer-links {
     list-style: none;
     display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 .footer-links li {
-    margin-left: 20px;
+    margin: 0 10px;
 }
 
 .footer-links a {
@@ -225,7 +266,9 @@ body {
     color: #007bff;
 }
 
-/* Responsive Styles */
+/* ==========================
+   Responsive Styles
+========================== */
 @media (max-width: 768px) {
     .nav-list {
         display: none;
@@ -235,7 +278,7 @@ body {
         left: 0;
         width: 100%;
         background-color: #fff;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     .nav-list.active {
@@ -251,27 +294,15 @@ body {
         display: block;
     }
 
-    .hero-content h1 {
+    .slide-content h1 {
         font-size: 32px;
     }
 
-    .hero-content p {
+    .slide-content p {
         font-size: 18px;
-    }
-
-    .banner-text h2 {
-        font-size: 28px;
     }
 
     .cards {
         grid-template-columns: 1fr;
-    }
-
-    .footer .container {
-        flex-direction: column;
-    }
-
-    .footer-links {
-        margin-top: 10px;
     }
 }
