@@ -12,9 +12,10 @@ html {
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
     color: #333;
+    background-color: #f8f9fa;
 }
 
 /* Container */
@@ -103,7 +104,7 @@ body {
 }
 
 /* ==========================
-   Slider Styles
+   Main Slider Styles
 ========================== */
 .slider {
     position: relative;
@@ -137,11 +138,9 @@ body {
 #banner1 {
     background-image: url('../images/nohsbanner1.jpg');
 }
-
 #banner2 {
     background-image: url('../images/nohsbanner2.png');
 }
-
 #banner3 {
     background-image: url('../images/nohsbanner3.jpg');
 }
@@ -163,6 +162,7 @@ body {
     margin-bottom: 20px;
 }
 
+/* Slider dots */
 .dots {
     position: absolute;
     bottom: 20px;
@@ -187,7 +187,7 @@ body {
 }
 
 /* ==========================
-   About Section
+   About Section Styles
 ========================== */
 .about {
     padding: 80px 20px;
@@ -200,15 +200,55 @@ body {
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
-    flex-wrap: wrap; /* For mobile responsiveness */
+    flex-wrap: wrap;
 }
 
-.about-image img {
+/* About slider */
+.about-slider {
+    position: relative;
     width: 100%;
     max-width: 500px;
+    overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
+
+.about-slider .slide {
+    display: none;
+    width: 100%;
+}
+
+.about-slider .slide.active {
+    display: block;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.about-slider img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+/* About slider buttons */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(0,0,0,0.7);
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
 
 .about-text {
     flex: 1;
@@ -227,23 +267,23 @@ body {
 }
 
 /* ==========================
-   Cards Section
+   Cards / Strands Section
 ========================== */
 .cards-section {
     padding: 50px 0;
-    background-color: #f8f9fa;
+    text-align: center;
 }
 
 .cards-section h2 {
-    text-align: center;
-    margin-bottom: 40px;
     font-size: 36px;
+    margin-bottom: 40px;
 }
 
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    justify-items: center;
 }
 
 .card {
@@ -262,7 +302,7 @@ body {
 
 .card img {
     width: 100%;
-    height: 200px; /* uniform height for all cards */
+    height: 200px;
     object-fit: cover;
 }
 
@@ -281,12 +321,11 @@ body {
 }
 
 /* ==========================
-   Buildings Section
+   Buildings & Developers Section
 ========================== */
 .buildings-section,
 .developers-section {
     padding: 50px 20px;
-    background-color: #f8f9fa;
     text-align: center;
 }
 
@@ -294,7 +333,6 @@ body {
 .developers-section h2 {
     font-size: 36px;
     margin-bottom: 40px;
-    color: #333;
 }
 
 .buildings-grid,
@@ -373,7 +411,7 @@ body {
 }
 
 /* ==========================
-   Responsive Styles
+   Responsive
 ========================== */
 @media (max-width: 768px) {
     .nav-list {
@@ -387,56 +425,20 @@ body {
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
-    .nav-list.active {
-        display: flex;
-    }
+    .nav-list.active { display: flex; }
 
-    .nav-list li {
-        margin: 10px 0;
-        text-align: center;
-    }
+    .nav-list li { margin: 10px 0; text-align: center; }
+    .menu-btn { display: block; }
 
-    .menu-btn {
-        display: block;
-    }
+    .slide-content h1 { font-size: 32px; }
+    .slide-content p { font-size: 18px; }
 
-    .slide-content h1 {
-        font-size: 32px;
-    }
-
-    .slide-content p {
-        font-size: 18px;
-    }
-
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-image img {
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .about-text h2 {
-        font-size: 28px;
-    }
-
-    .about-text p {
-        font-size: 16px;
-    }
-    
+    .cards { grid-template-columns: 1fr; }
+    .about-container { flex-direction: column; text-align: center; }
+    .about-text h2 { font-size: 28px; }
+    .about-text p { font-size: 16px; }
     .buildings-grid,
-    .developers-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-
+    .developers-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
     .building-card img,
-    .developer-card img {
-        height: 150px;
-    }
+    .developer-card img { height: 150px; }
 }

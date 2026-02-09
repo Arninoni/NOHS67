@@ -1,146 +1,12 @@
-insert it hre so i ncan copy and paste <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOHS</title>
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* ==========================
-           About Section
-        ========================== */
-        .about {
-            padding: 80px 20px;
-            background-color: #f8f9fa;
-        }
+    <script src="js/main.js"></script>
 
-        .about-container {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-            flex-wrap: wrap; /* For mobile responsiveness */
-        }
-
-        .about-image img {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-text h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .about-text p {
-            font-size: 18px;
-            line-height: 1.6;
-            color: #555;
-        }
-
-        /* ==========================
-           Buildings & Developers Sections
-        ========================== */
-        .buildings-section,
-        .developers-section {
-            padding: 50px 20px;
-            background-color: #f8f9fa;
-            text-align: center;
-        }
-
-        .buildings-section h2,
-        .developers-section h2 {
-            font-size: 36px;
-            margin-bottom: 40px;
-            color: #333;
-        }
-
-        /* Grid layout */
-        .buildings-grid,
-        .developers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
-            justify-items: center;
-        }
-
-        /* Card styling */
-        .building-card,
-        .developer-card {
-            background-color: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            max-width: 220px;
-        }
-
-        .building-card img,
-        .developer-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .building-card p,
-        .developer-card p {
-            padding: 15px;
-            font-size: 16px;
-            color: #555;
-        }
-
-        /* Hover effects */
-        .building-card:hover,
-        .developer-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
-
-        .building-card:hover img,
-        .developer-card:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .about-container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .about-image img {
-                max-width: 100%;
-                margin-bottom: 20px;
-            }
-
-            .about-text h2 {
-                font-size: 28px;
-            }
-
-            .about-text p {
-                font-size: 16px;
-            }
-
-            .buildings-grid,
-            .developers-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            }
-
-            .building-card img,
-            .developer-card img {
-                height: 150px;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -163,7 +29,7 @@ insert it hre so i ncan copy and paste <!DOCTYPE html>
         </div>
     </header>
 
-    <!-- Slider Section -->
+    <!-- Main Slider Section -->
     <section class="slider" id="home">
         <div class="slides">
             <div class="slide" id="banner1">
@@ -188,7 +54,6 @@ insert it hre so i ncan copy and paste <!DOCTYPE html>
                 </div>
             </div>
         </div>
-
         <!-- Navigation dots -->
         <div class="dots">
             <span class="dot active"></span>
@@ -199,15 +64,29 @@ insert it hre so i ncan copy and paste <!DOCTYPE html>
 
     <!-- About Section -->
     <section class="about" id="about">
-        <div class="container about-container">
-            <div class="about-image">
-                <img src="images/nohs_about.jpg" alt="NOHS School Building">
+        <div class="about-container container">
+            <!-- Image Slider -->
+            <div class="about-slider">
+                <div class="slide active">
+                    <img src="images/nohs1.jpg" alt="NOHS Image 1">
+                </div>
+                <div class="slide">
+                    <img src="images/nohs2.jpg" alt="NOHS Image 2">
+                </div>
+                <div class="slide">
+                    <img src="images/nohs3.jpg" alt="NOHS Image 3">
+                </div>
+                <!-- Slider Buttons -->
+                <button class="prev-btn">&#10094;</button>
+                <button class="next-btn">&#10095;</button>
             </div>
+
+            <!-- Text Content -->
             <div class="about-text">
                 <h2>About NOHS</h2>
                 <p>
-                    Negros Occidental High School (NOHS) is a premier educational institution committed to excellence in education. 
-                    With a dedicated faculty, state-of-the-art facilities, and a focus on holistic student development, NOHS 
+                    Negros Occidental High School (NOHS) is a premier educational institution committed to excellence in education.
+                    With a dedicated faculty, state-of-the-art facilities, and a focus on holistic student development, NOHS
                     nurtures young minds to achieve academic and personal success.
                 </p>
             </div>
@@ -316,48 +195,8 @@ insert it hre so i ncan copy and paste <!DOCTYPE html>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script>
-        // Mobile menu toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const navList = document.querySelector('.nav-list');
-        menuBtn.addEventListener('click', () => {
-            navList.classList.toggle('active');
-        });
-
-        // Smooth scroll for navigation links
-        const navLinks = document.querySelectorAll('.nav-list a[href^="#"]');
-        navLinks.forEach(link => {
-            link.addEventListener('click', e => {
-                e.preventDefault();
-                const target = document.querySelector(link.getAttribute('href'));
-                target.scrollIntoView({ behavior: 'smooth' });
-                // Close mobile menu after click
-                navList.classList.remove('active');
-            });
-        });
-
-        // Slider JS
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const dots = document.querySelectorAll('.dot');
-
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.style.opacity = (i === index) ? '1' : '0';
-            });
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        showSlide(currentSlide);
-        setInterval(nextSlide, 3000); // Change slide every 3 seconds
-    </script>
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/about-slider.js"></script>
 </body>
 </html>
