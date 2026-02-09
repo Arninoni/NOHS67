@@ -28,59 +28,54 @@
     </header>
 
     <!-- Main Slider Section -->
-<section class="slider" id="home">
-    <div class="slides">
-        <div class="slide" id="banner1">
-            <div class="slide-content">
-                <h1>Welcome to NOHS</h1>
-                <p>Your subtitle goes here. Professional and modern layout.</p>
-                <a href="#about" class="btn">Learn More</a>
+    <section class="slider" id="home">
+        <div class="slides">
+            <div class="slide" id="banner1">
+                <div class="slide-content">
+                    <h1>Welcome to NOHS</h1>
+                    <p>Your subtitle goes here. Professional and modern layout.</p>
+                    <a href="#about" class="btn">Learn More</a>
+                </div>
+            </div>
+            <div class="slide" id="banner2">
+                <div class="slide-content">
+                    <h1>Excellence in Education</h1>
+                    <p>State-of-the-art facilities and experienced faculty.</p>
+                    <a href="#strands" class="btn">Explore Programs</a>
+                </div>
+            </div>
+            <div class="slide" id="banner3">
+                <div class="slide-content">
+                    <h1>Our Campus</h1>
+                    <p>Discover our modern facilities and vibrant learning environment.</p>
+                    <a href="#about" class="btn">Check it Out</a>
+                </div>
             </div>
         </div>
-        <div class="slide" id="banner2">
-            <div class="slide-content">
-                <h1>Excellence in Education</h1>
-                <p>State-of-the-art facilities and experienced faculty.</p>
-                <a href="#strands" class="btn">Explore Programs</a>
-            </div>
+
+        <!-- Navigation buttons -->
+        <button class="prev-slide">&#10094;</button>
+        <button class="next-slide">&#10095;</button>
+
+        <!-- Navigation dots -->
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
         </div>
-        <div class="slide" id="banner3">
-            <div class="slide-content">
-                <h1>Our Campus</h1>
-                <p>Discover our modern facilities and vibrant learning environment.</p>
-                <a href="#about" class="btn">Check it Out</a>
-            </div>
-        </div>
-    </div>
 
-    <!-- Slider navigation buttons -->
-    <button class="prev-slide">&#10094;</button>
-    <button class="next-slide">&#10095;</button>
-
-    <!-- Navigation dots -->
-    <div class="dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-    </div>
-</section>
-
+        <!-- Dark overlay in bottom right -->
+        <div class="slider-overlay">NOHS</div>
+    </section>
 
     <!-- About Section -->
     <section class="about" id="about">
         <div class="about-container container">
-            <!-- About Image Slider -->
+            <!-- About Slider -->
             <div class="about-slider">
-                <div class="slide active">
-                    <img src="images/nohs1.jpg" alt="NOHS Image 1">
-                </div>
-                <div class="slide">
-                    <img src="images/nohs2.jpg" alt="NOHS Image 2">
-                </div>
-                <div class="slide">
-                    <img src="images/nohs3.jpg" alt="NOHS Image 3">
-                </div>
-                <!-- Slider Buttons -->
+                <div class="slide active"><img src="images/nohs1.jpg" alt="NOHS Image 1"></div>
+                <div class="slide"><img src="images/nohs2.jpg" alt="NOHS Image 2"></div>
+                <div class="slide"><img src="images/nohs3.jpg" alt="NOHS Image 3"></div>
                 <button class="prev-btn">&#10094;</button>
                 <button class="next-btn">&#10095;</button>
             </div>
@@ -130,85 +125,14 @@
         </div>
     </section>
 
-    <!-- Buildings Section -->
-    <section class="buildings-section" id="buildings">
-        <div class="container">
-            <h2>Buildings</h2>
-            <div class="buildings-grid">
-                <div class="building-card">
-                    <img src="images/building1.jpg" alt="Building 1">
-                    <p>Main Building</p>
-                </div>
-                <div class="building-card">
-                    <img src="images/building2.jpg" alt="Building 2">
-                    <p>Science Lab</p>
-                </div>
-                <div class="building-card">
-                    <img src="images/building3.jpg" alt="Building 3">
-                    <p>Library</p>
-                </div>
-                <div class="building-card">
-                    <img src="images/building4.jpg" alt="Building 4">
-                    <p>Auditorium</p>
-                </div>
-                <div class="building-card">
-                    <img src="images/building5.jpg" alt="Building 5">
-                    <p>Gymnasium</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Developers Section -->
-    <section class="developers-section" id="developers">
-        <div class="container">
-            <h2>Developers</h2>
-            <div class="developers-grid">
-                <div class="developer-card">
-                    <img src="images/developer1.jpg" alt="Developer 1">
-                    <p>John Doe - Frontend Developer</p>
-                </div>
-                <div class="developer-card">
-                    <img src="images/developer2.jpg" alt="Developer 2">
-                    <p>Jane Smith - Backend Developer</p>
-                </div>
-                <div class="developer-card">
-                    <img src="images/developer3.jpg" alt="Developer 3">
-                    <p>Mark Lee - UI/UX Designer</p>
-                </div>
-                <div class="developer-card">
-                    <img src="images/developer4.jpg" alt="Developer 4">
-                    <p>Emily Tan - Project Manager</p>
-                </div>
-                <div class="developer-card">
-                    <img src="images/developer5.jpg" alt="Developer 5">
-                    <p>Alex Cruz - QA Tester</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Section (optional example) -->
-    <section class="video-section container">
-        <h2>Campus Tour Video</h2>
-        <video width="100%" controls>
-            <source src="videos/campus-tour.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </section>
-
     <!-- Footer Section -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 NOHS. All rights reserved.</p>
-            <ul class="footer-links">
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-            </ul>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- Scripts -->
     <script src="js/main.js"></script>
 </body>
 </html>

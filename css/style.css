@@ -18,14 +18,12 @@ body {
     background-color: #f8f9fa;
 }
 
-/* Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Buttons */
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -42,12 +40,12 @@ body {
 }
 
 /* ==========================
-   Header Styles
+   Header
 ========================== */
 .header {
     position: sticky;
     top: 0;
-    background-color: #fff;
+    background: #fff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 1000;
 }
@@ -56,7 +54,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 15px 0;
 }
 
 .logo {
@@ -65,46 +63,25 @@ body {
     gap: 20px;
 }
 
-.logo-img {
-    height: 50px;
-    width: auto;
-}
-
-.logo h2 {
-    font-size: 24px;
-    color: #333;
-}
+.logo-img { height: 50px; }
 
 .nav-list {
     display: flex;
     list-style: none;
 }
 
-.nav-list li {
-    margin-left: 20px;
-}
+.nav-list li { margin-left: 20px; }
 
 .nav-list a {
     text-decoration: none;
     color: black;
     font-weight: bold;
-    transition: color 0.3s ease;
 }
 
-.nav-list a:hover {
-    color: #007bff;
-}
-
-.menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-}
+.menu-btn { display: none; background: none; border: none; font-size: 24px; cursor: pointer; }
 
 /* ==========================
-   Main Slider Styles
+   Main Slider
 ========================== */
 .slider {
     position: relative;
@@ -113,13 +90,39 @@ body {
     overflow: hidden;
 }
 
-.slides {
-    position: relative;
+.slides { position: relative; width: 100%; height: 100%; }
+
+.slide {
+    position: absolute;
     width: 100%;
     height: 100%;
+    top: 0; left: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
-.slider .prev-slide,
-.slider .next-slide {
+
+#banner1 { background-image: url('../images/nohsbanner1.jpg'); }
+#banner2 { background-image: url('../images/nohsbanner2.png'); }
+#banner3 { background-image: url('../images/nohsbanner3.jpg'); }
+
+.slide-content {
+    color: #fff;
+    background-color: rgba(0,0,0,0.4);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.slide-content h1 { font-size: 48px; margin-bottom: 15px; }
+.slide-content p { font-size: 24px; margin-bottom: 20px; }
+
+/* Prev/Next buttons */
+.prev-slide, .next-slide {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -131,62 +134,13 @@ body {
     border-radius: 5px;
     font-size: 24px;
     z-index: 10;
-    transition: background-color 0.3s ease;
 }
 
-.slider .prev-slide:hover,
-.slider .next-slide:hover {
-    background-color: rgba(0,0,0,0.7);
-}
+.prev-slide:hover, .next-slide:hover { background-color: rgba(0,0,0,0.7); }
+.prev-slide { left: 20px; } 
+.next-slide { right: 20px; }
 
-.slider .prev-slide { left: 20px; }
-.slider .next-slide { right: 20px; }
-
-
-.slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-#banner1 {
-    background-image: url('../images/nohsbanner1.jpg');
-}
-#banner2 {
-    background-image: url('../images/nohsbanner2.png');
-}
-#banner3 {
-    background-image: url('../images/nohsbanner3.jpg');
-}
-
-.slide-content {
-    color: #fff;
-    background-color: rgba(0,0,0,0.4);
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.slide-content h1 {
-    font-size: 48px;
-    margin-bottom: 15px;
-}
-
-.slide-content p {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-/* Slider dots */
+/* Dots */
 .dots {
     position: absolute;
     bottom: 20px;
@@ -203,266 +157,54 @@ body {
     display: inline-block;
     opacity: 0.5;
     cursor: pointer;
-    transition: opacity 0.3s ease;
 }
 
-.dot.active {
-    opacity: 1;
-}
+.dot.active { opacity: 1; }
 
-/* ==========================
-   About Section Styles
-========================== */
-.about {
-    padding: 80px 20px;
-    background-color: #f8f9fa;
-}
-
-.about-container {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-}
-
-/* About slider */
-.about-slider {
-    position: relative;
-    width: 100%;
-    max-width: 500px;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.about-slider .slide {
-    display: none;
-    width: 100%;
-}
-
-.about-slider .slide.active {
-    display: block;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.about-slider img {
-    width: 100%;
-    display: block;
-    border-radius: 10px;
-}
-
-/* About slider buttons */
-.prev-btn, .next-btn {
+/* Overlay */
+.slider-overlay {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 20px;
+    right: 20px;
     background-color: rgba(0,0,0,0.5);
     color: #fff;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
+    padding: 8px 12px;
     border-radius: 5px;
-    font-size: 20px;
-}
-
-.prev-btn:hover, .next-btn:hover {
-    background-color: rgba(0,0,0,0.7);
-}
-
-.prev-btn { left: 10px; }
-.next-btn { right: 10px; }
-
-.about-text {
-    flex: 1;
-}
-
-.about-text h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.about-text p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #555;
-}
-
-/* ==========================
-   Cards / Strands Section
-========================== */
-.cards-section {
-    padding: 50px 0;
-    text-align: center;
-}
-
-.cards-section h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    justify-items: center;
-}
-
-.card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 200px;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.card h3 {
-    padding: 20px;
-    font-size: 24px;
-}
-
-.card p {
-    padding: 0 20px 20px 20px;
-    color: #666;
-}
-
-.card .btn {
-    margin: 0 20px 20px 20px;
-}
-
-/* ==========================
-   Buildings & Developers Section
-========================== */
-.buildings-section,
-.developers-section {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.buildings-section h2,
-.developers-section h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
-}
-
-.buildings-grid,
-.developers-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 20px;
-    justify-items: center;
-}
-
-.building-card,
-.developer-card {
-    background-color: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-width: 220px;
-}
-
-.building-card img,
-.developer-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.building-card p,
-.developer-card p {
-    padding: 15px;
+    font-weight: bold;
     font-size: 16px;
-    color: #555;
-}
-
-.building-card:hover,
-.developer-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-
-.building-card:hover img,
-.developer-card:hover img {
-    transform: scale(1.05);
 }
 
 /* ==========================
-   Footer Styles
+   About Slider
 ========================== */
-.footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
+.about-container { display: flex; gap: 40px; flex-wrap: wrap; padding: 80px 0; }
+.about-slider { position: relative; width: 100%; max-width: 500px; overflow: hidden; border-radius: 10px; }
+.about-slider .slide { display: none; }
+.about-slider .slide.active { display: block; }
+.about-slider img { width: 100%; border-radius: 10px; }
+.prev-btn, .next-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(0,0,0,0.5); color: #fff; border: none; padding: 10px 15px; cursor: pointer; border-radius: 5px;
 }
+.prev-btn { left: 10px; } .next-btn { right: 10px; }
+.prev-btn:hover, .next-btn:hover { background: rgba(0,0,0,0.7); }
 
-.footer-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.footer-links li {
-    margin: 0 10px;
-}
-
-.footer-links a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: #007bff;
-}
+.about-text { flex: 1; }
+.about-text h2 { font-size: 36px; margin-bottom: 20px; }
+.about-text p { font-size: 18px; color: #555; line-height: 1.6; }
 
 /* ==========================
-   Responsive
+   Cards Section
 ========================== */
-@media (max-width: 768px) {
-    .nav-list {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
+.cards-section { padding: 50px 0; text-align: center; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; justify-items: center; }
+.card { background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; width: 200px; transition: 0.3s; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
+.card img { width: 100%; height: 200px; object-fit: cover; }
+.card h3 { padding: 20px; font-size: 24px; }
+.card p, .card .btn { padding: 0 20px 20px; }
 
-    .nav-list.active { display: flex; }
-
-    .nav-list li { margin: 10px 0; text-align: center; }
-    .menu-btn { display: block; }
-
-    .slide-content h1 { font-size: 32px; }
-    .slide-content p { font-size: 18px; }
-
-    .cards { grid-template-columns: 1fr; }
-    .about-container { flex-direction: column; text-align: center; }
-    .about-text h2 { font-size: 28px; }
-    .about-text p { font-size: 16px; }
-    .buildings-grid,
-    .developers-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
-    .building-card img,
-    .developer-card img { height: 150px; }
-}
+/* ==========================
+   Footer
+========================== */
+.footer { background: #333; color: #fff; text-align: center; padding: 20px 0; }
