@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOHS</title>
+    <link rel="stylesheet" href="css/style.css">  <!-- Updated path to css folder -->
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <!-- Replace with your logo image or text -->
+              <img src="images/nohslogo.png" alt="Logo" class="logo-img">  <!-- Updated path to images folder; assumed filename based on your class; change if needed -->
+                <h2>Negros Occidental High School</h2>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#developer">Developer</a></li>
+                </ul>
+                <button class="menu-btn" id="menu-btn">☰</button> <!-- Hamburger menu button -->
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner Section (First Banner - Maroon BG) -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Welcome to NOHS</h1>
+            <p>Your subtitle goes here. This is a professional and modern layout.</p>
+            <a href="#cards" class="btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Second Banner Section (White BG with text on the right) -->
+    <section class="second-banner">
+        <div class="container">
+            <div class="banner-text">
+                <h2>INFORMATION</h2>
+               <h3>Excellence in Education</h3>  <!-- Optional subtitle -->
+            <p>INFOMATION</p>
+            <ul>
+                <li>State-of-the-art facilities</li>
+                <li>Experienced faculty</li>
+                <li>Extracurricular activities</li>
+                <li>Community involvement</li>
+            </ul>
+            <a href="#services" class="btn">Explore Our Programs</a>  <!-- Button linking to services section -->
+        </div>
+    </div>
+</section>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4-Column Card Section -->
+    <section class="cards-section" id="services">
+        <div class="container">
+            <h2>Strands</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Service+1" alt="Service 1">  <!-- Replace with src="images/your-service1.jpg" -->
+                    <h3>STEM</h3>
+                    <p>Short description of the service. Lorem ipsum dolor sit amet.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Service+2" alt="Service 2">  <!-- Replace with src="images/your-service2.jpg" -->
+                    <h3>TVL</h3>
+                    <p>Short description of the service. Lorem ipsum dolor sit amet.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Service+3" alt="Service 3">  <!-- Replace with src="images/your-service3.jpg" -->
+                    <h3>ABM</h3>
+                    <p>Short description of the service. Lorem ipsum dolor sit amet.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200?text=Service+4" alt="Service 4">  <!-- Replace with src="images/your-service4.jpg" -->
+                    <h3>HUMMS</h3>
+               <p>Short description of the service. Lorem ipsum dolor sit amet.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Your Company. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        // Simple toggle for mobile menu (optional enhancement)
+        const menuBtn = document.getElementById('menu-btn');
+        const navList = document.querySelector('.nav-list');
+        menuBtn.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
