@@ -142,6 +142,10 @@ body {
     background-image: url('../images/nohsbanner2.png');
 }
 
+#banner3 {
+    background-image: url('../images/nohsbanner3.jpg');
+}
+
 .slide-content {
     color: #fff;
     background-color: rgba(0,0,0,0.4);
@@ -208,6 +212,7 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 200px;
 }
 
 .card:hover {
@@ -217,7 +222,7 @@ body {
 
 .card img {
     width: 100%;
-    height: 200px; /* Fixed height for uniformity */
+    height: 200px; /* uniform height for all cards */
     object-fit: cover;
 }
 
