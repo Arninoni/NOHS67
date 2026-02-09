@@ -1,52 +1,121 @@
-// ===== MOBILE MENU =====
+// ============================
+// MOBILE MENU TOGGLE
+// ============================
 const menuBtn = document.getElementById('menu-btn');
 const navList = document.querySelector('.nav-list');
-menuBtn.addEventListener('click', ()=> navList.classList.toggle('active'));
 
-// ===== MAIN SLIDER =====
+if (menuBtn && navList) {
+    menuBtn.addEventListener('click', () => {
+        navList.classList.toggle('active');
+    });
+}
+
+// ============================
+// MAIN HEADER SLIDER
+// ============================
 const slides = document.querySelectorAll('.slider .slide');
-const dots = document.querySelectorAll('.dot');
+const dots = document.querySelectorAll('.slider .dot');
 const prevSlideBtn = document.querySelector('.prev-slide');
 const nextSlideBtn = document.querySelector('.next-slide');
+
 let currentSlide = 0;
 const slideIntervalTime = 5000;
 let slideInterval;
 
-function showSlide(i){
-    slides.forEach((s,index)=> s.style.opacity = index===i?'1':'0');
-    dots.forEach((d,index)=> d.classList.toggle('active', index===i));
+function showSlide(index) {
+    slides.forEach((slide, i) => slide.style.opacity = (i === index ? '1' : '0'));
+    dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
 }
 
-function nextSlide(){ currentSlide = (currentSlide+1)%slides.length; showSlide(currentSlide); }
-function prevSlide(){ currentSlide = (currentSlide-1+slides.length)%slides.length; showSlide(currentSlide); }
+// Next / Previous functions
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
 
-function startSlider(){ slideInterval=setInterval(nextSlide, slideIntervalTime); }
-function stopSlider(){ clearInterval(slideInterval); }
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+}
 
-showSlide(currentSlide);
-startSlider();
+// Auto-slide
+function startSlider() {
+    slideInterval = setInterval(nextSlide, slideIntervalTime);
+}
 
-const slider = document.querySelector('.slider');
-const cardsSection = document.querySelector('.cards-section');
-[slider,cardsSection].forEach(el=>el.addEventListener('mouseenter',stopSlider));
-[slider,cardsSection].forEach(el=>el.addEventListener('mouseleave',startSlider));
+function stopSlider() {
+    clearInterval(slideInterval);
+}
+
+// Initialize
+if (slides.length > 0) {
+    showSlide(currentSlide);
+    startSlider();
+}
+
+// Pause on hover
+const sliderSection = document.querySelector('.slider');
+if (sliderSection) {
+    sliderSection.addEventListener('mouseenter', stopSlider);
+    sliderSection.addEventListener('mouseleave', startSlider);
+}
 
 // Dot navigation
-dots.forEach((dot,i)=> dot.addEventListener('click',()=> { currentSlide=i; showSlide(i); }));
+dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+        currentSlide = i;
+        showSlide(currentSlide);
+    });
+});
 
 // Prev/Next buttons
-if(prevSlideBtn) prevSlideBtn.addEventListener('click', prevSlide);
-if(nextSlideBtn) nextSlideBtn.addEventListener('click', nextSlide);
+if (prevSlideBtn) prevSlideBtn.addEventListener('click', prevSlide);
+if (nextSlideBtn) nextSlideBtn.addEventListener('click', nextSlide);
 
-// ===== ABOUT SLIDER =====
+// ============================
+// ABOUT SECTION SLIDER
+// ============================
 const aboutSlides = document.querySelectorAll('.about-slider .slide');
-const prevBtn = document.querySelector('.about-slider .prev-btn');
-const nextBtn = document.querySelector('.about-slider .next-btn');
+const aboutPrevBtn = document.querySelector('.about-slider .prev-btn');
+const aboutNextBtn = document.querySelector('.about-slider .next-btn');
 let aboutIndex = 0;
 
-function showAboutSlide(i){ aboutSlides.forEach((s,index)=> s.classList.toggle('active', index===i)); }
+function showAboutSlide(index) {
+    aboutSlides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+}
 
-if(prevBtn) prevBtn.addEventListener('click',()=>{ aboutIndex=(aboutIndex-1+aboutSlides.length)%aboutSlides.length; showAboutSlide(aboutIndex); });
-if(nextBtn) nextBtn.addEventListener('click',()=>{ aboutIndex=(aboutIndex+1)%aboutSlides.length; showAboutSlide(aboutIndex); });
+// Prev/Next buttons
+if (aboutPrevBtn) {
+    aboutPrevBtn.addEventListener('click', () => {
+        aboutIndex = (aboutIndex - 1 + aboutSlides.length) % aboutSlides.length;
+        showAboutSlide(aboutIndex);
+    });
+}
 
-showAboutSlide(aboutIndex);
+if (aboutNextBtn) {
+    aboutNextBtn.addEventListener('click', () => {
+        aboutIndex = (aboutIndex + 1) % aboutSlides.length;
+        showAboutSlide(aboutIndex);
+    });
+}
+
+// Auto-slide
+let aboutInterval = setInterval(() => {
+    aboutIndex = (aboutIndex + 1) % aboutSlides.length;
+    showAboutSlide(aboutIndex);
+}, 5000);
+
+// Pause on hover
+const aboutSliderContainer = document.querySelector('.about-slider');
+if (aboutSliderContainer) {
+    aboutSliderContainer.addEventListener('mouseenter', () => clearInterval(aboutInterval));
+    aboutSliderContainer.addEventListener('mouseleave', () => {
+        aboutInterval = setInterval(() => {
+            aboutIndex = (aboutIndex + 1) % aboutSlides.length;
+            showAboutSlide(aboutIndex);
+        }, 5000);
+    });
+}
+
+// Initialize about slider
+if (aboutSlides.length > 0) showAboutSlide(aboutIndex);
