@@ -119,3 +119,77 @@ if (aboutSliderContainer) {
 
 // Initialize about slider
 if (aboutSlides.length > 0) showAboutSlide(aboutIndex);
+
+// ============================
+// STRAND MODAL DATA
+// ============================
+const strandData = {
+    STEM: {
+        title: "STEM",
+        img: "images/stemlogo.png",
+        desc: "The STEM strand focuses on Science, Technology, Engineering, and Mathematics. It prepares students for careers in engineering, medicine, IT, and research."
+    },
+    TVL: {
+        title: "TVL",
+        img: "images/tvllogo.png",
+        desc: "The TVL strand offers hands-on technical and vocational skills such as culinary arts, electronics, and ICT, preparing students for employment or entrepreneurship."
+    },
+    ABM: {
+        title: "ABM",
+        img: "images/abmlogo.png",
+        desc: "The ABM strand develops skills in business, finance, accounting, and management for students aiming to become entrepreneurs or corporate leaders."
+    },
+    HUMSS: {
+        title: "HUMSS",
+        img: "images/humsslogo.png",
+        desc: "The HUMSS strand focuses on humanities and social sciences, ideal for students interested in communication, education, psychology, and public service."
+    }
+};
+
+// ============================
+// MODAL ELEMENTS
+// ============================
+const modalOverlay = document.getElementById('modalOverlay');
+const modalTitle = document.getElementById('modalTitle');
+const modalImg = document.getElementById('modalImg');
+const modalDesc = document.getElementById('modalDesc');
+const closeModalBtn = document.getElementById('closeModal');
+
+// ============================
+// OPEN MODAL
+// ============================
+document.querySelectorAll('.cards .btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+        e.preventDefault();
+        const card = btn.parentElement;
+        const strand = card.querySelector('h3').innerText;
+        const data = strandData[strand];
+
+        modalTitle.textContent = data.title;
+        modalImg.src = data.img;
+        modalDesc.textContent = data.desc;
+
+        modalOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+// ============================
+// CLOSE MODAL
+// ============================
+function closeModal() {
+    modalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+closeModalBtn.addEventListener('click', closeModal);
+
+// Click outside modal
+modalOverlay.addEventListener('click', e => {
+    if (e.target === modalOverlay) closeModal();
+});
+
+// ESC key
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeModal();
+});

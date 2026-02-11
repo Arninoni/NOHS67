@@ -266,56 +266,123 @@ body {
     color: #555;
 }
 
-/* ==========================
-   Cards Section
-========================== */
+/* STRANDS SECTION */
 .cards-section {
-    padding: 50px 0;
-    text-align: center;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.cards-section h2 {
+    font-size: 30px;
+  margin-bottom: 2rem;
 }
 
 .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    justify-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .card {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    overflow: hidden;
-    width: 250px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 220px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transform: translateY(-5px);
 }
 
 .card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+  width: 100px;
+  margin-bottom: 1rem;
 }
 
 .card h3 {
-    padding: 20px;
-    font-size: 24px;
+  margin-bottom: 0.5rem;
 }
 
-.card p, .card .btn {
-    padding: 0 20px 20px;
+.card p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #800000;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* MODAL */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  transform: scale(0.7);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.modal-overlay.active .modal {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.modal img {
+  width: 100px;
+  margin-bottom: 1rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
 
 /* ==========================
-   Team Section
+   Developer Section
 ========================== */
 .team-section {
-    padding: 50px 20px;
+    padding: 50px 10px;
     text-align: center;
+    background: #9c0c0c;
+    background-color: linear-gradient(0deg,rgba(138, 80, 80, 1) 21%, rgba(122, 0, 2, 1) 80%);
+;
+}
+
+.team-section h1 {
+    gap:20px;
+    font-size:30px;
+    color:white;
 }
 
 .team-section h2 {
@@ -358,14 +425,14 @@ body {
    Footer
 ========================== */
 .footer {
-    background: #333;
+    background: #636363;
     color: #fff;
     text-align: center;
     padding: 20px 0;
 }
 
 .card1 {
-    display:left ;
+    display:left;
 }
 /* Social buttons in footer */
 .card1 {
@@ -373,7 +440,7 @@ body {
     justify-content: center;
     gap: 20px;
     padding: 25px;
-    background-color: #eee;
+    background-color: ##636363;
     box-shadow: 0 0 20px rgba(0,0,0,0.05);
 }
 
