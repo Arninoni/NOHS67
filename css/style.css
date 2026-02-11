@@ -18,26 +18,40 @@ body {
     background-color: #f8f9fa;
 }
 
-.container {
+/* SUB NAVIGATION BAR */
+.sub-nav {
+    position: relative;
+    top: 0; /* sticks to top when scrolling */
+    width: 100%;
+    background-color: #800000; /* maroon full width */
+    padding: 12px 0;
+    z-index: 999;
+}
+
+/* Center content */
+.sub-nav-container {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 50px;
 }
 
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
+/* Links */
+.sub-link {
+    color: white;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s ease;
 }
 
-.btn:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
+/* Hover effect */
+.sub-link:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
 }
+
 
 /* ==========================
    Header
@@ -81,6 +95,18 @@ body {
     margin-left: 20px;
 }
 
+/* NAVBAR LINK HOVER */
+.nav-list li a:hover {
+    color: yellow; /* maroon or any color you want */
+}
+
+/* ACTIVE SECTION LINK */
+.nav-list li a.active-link {
+    color: yellow; /* same color as hover or different */
+    font-weight: bold; /* optional to highlight more */
+}
+
+
 .nav-list a {
     text-decoration: none;
     color: #550000;
@@ -119,8 +145,14 @@ body {
 
 .slider .slide img {
     width: 100%;
-    height: 100%;
+    height:100%;
     object-fit: cover;
+}
+
+.slider .slide:nth-child(3) img {
+    width: 100%;
+    height: 100%;       /* your desired height */
+    object-fit: cover;   /* keeps proportions while filling space */
 }
 
 .overlay {
@@ -194,12 +226,12 @@ body {
    About Slider
 ========================== */
 .about {
-    background-image: url('../images/aboutbg.png')
-    background-size: cover;   /* makes the image cover the entire section */
-    background-position: center; /* centers the image */
-    background-repeat: no-repeat; /* prevents tiling */
-    color: white; /* optional: make text white so it shows on dark background */
-    padding: 50px 0; /* optional: add spacing */
+    background-image: url('../images/aboutbg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 30px 0;
 }
 
 
@@ -207,7 +239,7 @@ body {
     display: flex;
     gap: 40px;
     flex-wrap: wrap;
-    padding: 80px 20px;
+    padding: 40px 20px;
 }
 
 .about-slider {
@@ -233,7 +265,7 @@ body {
 
 .about-slider img {
     width: 100%;
-    height: auto;
+    max-height: 300px;
     display: block;
     object-fit: contain;
     border-radius: 10px;
@@ -258,8 +290,8 @@ body {
     background: rgba(0,0,0,0.7);
 }
 
-.prev-btn { left: 10px; }
-.next-btn { right: 10px; }
+.prev-btn { left: 140px; }
+.next-btn { right: 140px; }
 
 .about-text {
     flex: 1;
@@ -267,13 +299,13 @@ body {
 
 .about-text h2 {
     font-size: 36px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .about-text p {
-    font-size: 27px;
-    line-height: 1.6;
-    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+    color: white;
 }
 
 /* STRANDS SECTION */
@@ -503,3 +535,25 @@ body {
     .menu-btn { display: block; }
 }
  
+/* From Uiverse.io by alexruix */ 
+.input {
+  max-width: 190px;
+  background-color: #f5f5f5;
+  color: #242424;
+  padding: .15rem .5rem;
+  min-height: 40px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  line-height: 1.15;
+  box-shadow: 0px 10px 20px -18px;
+}
+
+input:focus {
+  border-bottom: 2px solid #5b5fc7;
+  border-radius: 4px 4px 2px 2px;
+}
+
+input:hover {
+  outline: 1px solid lightgrey;
+}

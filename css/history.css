@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>History of NOHS</title>
+    <link rel="stylesheet" href="history.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="history-header">
+        <h1>History of Negros Occidental High School</h1>
+    </header>
+
+    <!-- Main History Section -->
+    <section class="history-section">
+        <div class="history-container">
+
+            <div class="history-image">
+                <img src="images/nohs-old.jpg" alt="Old NOHS Photo">
+            </div>
+
+            <div class="history-text">
+                <h2>Our Beginnings</h2>
+                <p>
+                    Negros Occidental High School (NOHS) was established to provide quality
+                    education to students in Bacolod City. Over the years, the school has
+                    grown into one of the most respected public high schools in the region.
+                </p>
+
+                <h2>Growth and Development</h2>
+                <p>
+                    Through decades of dedication, NOHS expanded its programs,
+                    improved facilities, and introduced various academic strands
+                    such as STEM, ABM, HUMSS, and TVL.
+                </p>
+
+                <h2>Today</h2>
+                <p>
+                    Today, NOHS continues to shape future leaders by promoting
+                    excellence in academics, leadership, and community service.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Back Button -->
+    <div class="back-btn-container">
+        <a href="index.html" class="back-btn">⬅ Back to Home</a>
+    </div>
+
+</body>
+</html>
