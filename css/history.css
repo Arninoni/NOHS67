@@ -1,54 +1,117 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>History of NOHS</title>
-    <link rel="stylesheet" href="history.css">
-</head>
-<body>
+/* ===============================
+   GLOBAL RESET
+================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- Header -->
-    <header class="history-header">
-        <h1>History of Negros Occidental High School</h1>
-    </header>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4; /* Soft background color */
+    color: #333;
+}
 
-    <!-- Main History Section -->
-    <section class="history-section">
-        <div class="history-container">
+/* ===============================
+   HEADER
+   🔹 Change header color here
+================================= */
+.header {
+    background-color: maroon; /* Maroon with slight transparency */
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
 
-            <div class="history-image">
-                <img src="images/nohs-old.jpg" alt="Old NOHS Photo">
-            </div>
+.header h1 {
+    font-size: 32px;
+}
 
-            <div class="history-text">
-                <h2>Our Beginnings</h2>
-                <p>
-                    Negros Occidental High School (NOHS) was established to provide quality
-                    education to students in Bacolod City. Over the years, the school has
-                    grown into one of the most respected public high schools in the region.
-                </p>
+/* ===============================
+   MAIN HISTORY SECTION
+================================= */
+.history-section {
+    padding: 60px 20px;
+}
 
-                <h2>Growth and Development</h2>
-                <p>
-                    Through decades of dedication, NOHS expanded its programs,
-                    improved facilities, and introduced various academic strands
-                    such as STEM, ABM, HUMSS, and TVL.
-                </p>
+.container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap; /* Allows stacking on mobile */
+}
 
-                <h2>Today</h2>
-                <p>
-                    Today, NOHS continues to shape future leaders by promoting
-                    excellence in academics, leadership, and community service.
-                </p>
-            </div>
+/* ===============================
+   IMAGE STYLING
+================================= */
+.image-box img {
+    width: 100%;              /* Responsive */
+    max-width: 450px;
+    border-radius: 12px;      /* Rounded corners */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Subtle shadow */
+    transition: transform 0.4s ease; /* Smooth hover effect */
+}
 
-        </div>
-    </section>
+/* Hover Zoom Effect */
+.image-box img:hover {
+    transform: scale(1.05);
+}
 
-    <!-- Back Button -->
-    <div class="back-btn-container">
-        <a href="index.html" class="back-btn">⬅ Back to Home</a>
-    </div>
+/* ===============================
+   TEXT SECTION
+================================= */
+.text-box {
+    flex: 1;
+}
 
-</body>
-</html>
+.text-box h2 {
+    color: #800000; /* Maroon theme */
+    margin-bottom: 10px;
+}
+
+.text-box p {
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+/* =========================
+   BACK BUTTON (Top Right)
+========================= */
+
+.back-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    text-decoration: none;
+    background-color: white;
+    color: #800000;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #ddd;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+   Image stacks on top in mobile
+================================= */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+}

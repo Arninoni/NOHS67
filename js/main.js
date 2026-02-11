@@ -193,28 +193,3 @@ modalOverlay.addEventListener('click', e => {
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeModal();
 });
-
-// ============================
-// ACTIVE NAV LINK ON SCROLL
-// ============================
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('.nav-list li a');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100; // offset to trigger earlier
-        const sectionHeight = section.clientHeight;
-        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active-link');
-        if (link.getAttribute('href') === '#' + current) {
-            link.classList.add('active-link');
-        }
-    });
-});

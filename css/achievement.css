@@ -1,0 +1,298 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+    background-color: rgba(128, 0, 0, 0.85);
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+.back-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-decoration: none;
+    background-color: white;
+    color: #800000;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #ddd;
+}
+
+/* =========================
+   ACHIEVEMENTS SECTION
+========================= */
+.achievements-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* =========================
+   ACHIEVEMENT CARD
+========================= */
+.achievement-card {
+    display: flex;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-card img {
+    width: 300px;
+    object-fit: cover;
+}
+
+.achievement-content {
+    padding: 25px;
+    flex: 1;
+}
+
+.achievement-content h2 {
+    color: #800000;
+    margin-bottom: 10px;
+}
+
+.achievement-content p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* =========================
+   MORE BUTTON
+========================= */
+.more-btn {
+    margin-top: 15px;
+    padding: 8px 16px;
+    background-color: #800000;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.more-btn:hover {
+    background-color: #a00000;
+    transform: scale(1.05);
+}
+
+/* =========================
+   MODAL POPUP
+========================= */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.modal-content h2 {
+    color: #800000;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .achievement-card {
+        flex-direction: column;
+    }
+
+    .achievement-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .back-btn {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
+
+/* Section Style */
+.achievement-section {
+  background: #fff8e1; /* light gold background */
+  padding: 50px 20px;
+  font-family: Arial, sans-serif;
+  position: relative; /* for corner decorations */
+  overflow: hidden;
+}
+
+/* Corner Decorations */
+.corner-decoration {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: repeating-linear-gradient(
+    45deg,
+    #FFD700,
+    #FFD700 10px,
+    #b8860b 10px,
+    #b8860b 20px
+  );
+  border-radius: 50%;
+  opacity: 0.5;
+  z-index: 1;
+  animation: shimmer 3s infinite alternate;
+}
+
+.corner-decoration.left {
+  top: -40px;
+  left: -40px;
+  transform: rotate(-20deg);
+}
+
+.corner-decoration.right {
+  top: -40px;
+  right: -40px;
+  transform: rotate(20deg);
+}
+
+/* Ribbon Style */
+.ribbon {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background-color: #FFD700; /* gold default */
+  color: white;
+  padding: 5px 15px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+/* Gold, Silver, Bronze Variants */
+.ribbon.gold { background-color: #FFD700; }
+.ribbon.silver { background-color: #C0C0C0; }
+.ribbon.bronze { background-color: #CD7F32; }
+
+/* Card Style */
+.achievement-card {
+  border: 2px solid #FFD700;
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin: 20px auto;
+  max-width: 800px;
+  background: #fffef0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 3; /* above decorations */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Title */
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #b8860b;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Shimmer Animation for Decorations */
+@keyframes shimmer {
+  0% { transform: rotate(-20deg) translateX(0) translateY(0); }
+  100% { transform: rotate(-20deg) translateX(5px) translateY(5px); }
+}
+</style>
+
+<!-- Font Awesome CDN for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
