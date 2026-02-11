@@ -193,6 +193,16 @@ body {
 /* ==========================
    About Slider
 ========================== */
+.about {
+    background-image: url('../images/aboutbg.png')
+    background-size: cover;   /* makes the image cover the entire section */
+    background-position: center; /* centers the image */
+    background-repeat: no-repeat; /* prevents tiling */
+    color: white; /* optional: make text white so it shows on dark background */
+    padding: 50px 0; /* optional: add spacing */
+}
+
+
 .about-container {
     display: flex;
     gap: 40px;
