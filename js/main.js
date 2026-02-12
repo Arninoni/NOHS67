@@ -193,3 +193,4 @@ modalOverlay.addEventListener('click', e => {
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeModal();
 });
+

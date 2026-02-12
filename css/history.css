@@ -35,7 +35,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
-    background:#A24857;
+    background-image: url('../images/aboutbg1.png');
     color: #333;
 }
 
@@ -161,4 +161,12 @@ header h1 {
     .text-box {
         margin-top: 20px;
     }
+}
+
+footer {
+    background-color: #444;  /* darker gray (cleaner look) */
+    color: #f1f1f1;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 14px;
 }

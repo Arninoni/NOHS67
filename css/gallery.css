@@ -147,3 +147,11 @@ h1 {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+footer {
+    background-color: #444;  /* darker gray (cleaner look) */
+    color: #f1f1f1;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 14px;
+}

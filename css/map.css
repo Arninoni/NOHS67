@@ -91,3 +91,11 @@ header {
         font-size: 14px;
     }
 }
+
+.footer {
+    background-color: #444;  /* darker gray (cleaner look) */
+    color: #f1f1f1;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 14px;
+}

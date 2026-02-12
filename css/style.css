@@ -18,38 +18,59 @@ body {
     background-color: #f8f9fa;
 }
 
+/* ============================= */
 /* SUB NAVIGATION BAR */
+/* ============================= */
+
 .sub-nav {
     position: relative;
-    top: 0; /* sticks to top when scrolling */
+    top: 0;
     width: 100%;
-    background-color: #800000; /* maroon full width */
-    padding: 12px 0;
+    background-color: #800000;
+    padding: 15px 0;
     z-index: 999;
 }
 
-/* Center content */
+/* Container */
 .sub-nav-container {
+    position: relative;
     max-width: 1200px;
-    margin: auto;
+    margin: 0 ;
+    padding-left: 40px;
     display: flex;
-    justify-content: flex-end;
-    gap: 50px;
+    align-items: center;
+    gap: 40px;
 }
 
 /* Links */
 .sub-link {
-    color: white;
+    position: relative;
     text-decoration: none;
+    color: white;
     font-weight: bold;
     font-size: 18px;
-    transition: all 0.3s ease;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+    z-index: 1;
 }
 
-/* Hover effect */
 .sub-link:hover {
     color: #ffcc00;
-    transform: scale(1.1);
+}
+
+.sub-link.active {
+    color: #ffcc00;
+}
+
+/* Sliding Indicator */
+.nav-indicator {
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    background-color: #ffcc00;
+    transition: all 0.35s ease;
+    left: 0;
+    width: 0;
 }
 
 
@@ -112,6 +133,7 @@ body {
 
 
 .nav-list a {
+
     text-decoration: none;
     color: #550000;
     font-weight: bold;
@@ -129,7 +151,7 @@ body {
 .empty-section {
     width: 100%;
     height: 200px; /* adjust height as needed */
-    background-color: #f0f0f0; /* placeholder color, change later */
+   background-image: url('../images/aboutbg1.png');
 }
 
 
@@ -138,7 +160,7 @@ body {
 ========================== */
 .slider {
     width: 100%;
-    height: 80vh;
+    height: 70vh;
     overflow: hidden;
     position: relative;
 }
@@ -157,14 +179,7 @@ body {
 
 .slider .slide img {
     width: 100%;
-    height:100%;
-    object-fit: cover;
-}
-
-.slider .slide:nth-child(3) img {
-    width: 100%;
-    height: 100%;       /* your desired height */
-    object-fit: cover;   /* keeps proportions while filling space */
+    height: 100%;
 }
 
 .overlay {
@@ -238,7 +253,7 @@ body {
    About Slider
 ========================== */
 .about {
-    background-image: url('../images/aboutbg.png');
+    background-image: url('../images/aboutbg1.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -429,13 +444,13 @@ body {
     padding: 50px 10px;
     text-align: center;
     background: #9c0c0c;
-    background-color: linear-gradient(0deg,rgba(138, 80, 80, 1) 21%, rgba(122, 0, 2, 1) 80%);
+    background-image: url('../images/aboutbg.png');
 ;
 }
 
 .team-section h1 {
     gap:20px;
-    font-size:30px;
+    font-size: 22px;
     color:white;
 }
 
@@ -471,7 +486,7 @@ body {
 }
 
 .member p {
-    font-size: 14px;
+    font-size: 12px;
     color: #555;
 }
 
