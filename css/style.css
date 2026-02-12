@@ -53,6 +53,9 @@ body {
 }
 
 
+
+
+
 /* ==========================
    Header
 ========================== */
@@ -121,6 +124,14 @@ body {
     font-size: 24px;
     cursor: pointer;
 }
+
+/* EMPTY DIV SECTION */
+.empty-section {
+    width: 100%;
+    height: 200px; /* adjust height as needed */
+    background-color: #f0f0f0; /* placeholder color, change later */
+}
+
 
 /* ==========================
    Main Slider
