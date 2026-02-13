@@ -5,7 +5,8 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4; /* soft background */
+    background: #721d1a;
+    
 }
 
 
@@ -16,7 +17,7 @@ body {
 header {
     background-color: #800000; /* NOHS maroon */
     color: white;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     position: relative; /* needed for button positioning */
 }
@@ -98,4 +99,29 @@ header {
     text-align: center;
     padding: 25px 0;
     font-size: 14px;
+}
+
+.image-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.image-lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 15px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
 }

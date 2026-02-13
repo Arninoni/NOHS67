@@ -35,13 +35,13 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
-    background-image: url('../images/aboutbg1.png');
+    background-color: #5e1812;
     color: #333;
 }
 
 header {
     text-align: center;
-    padding: 40px 20px;
+    padding: 15px 0px;
     background-color: #800000;
     color: white;
 }

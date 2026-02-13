@@ -24,15 +24,22 @@
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background: #fefbf5;
+  background: #721d1a;
   color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 10px 0px;
+    background-color: #800000;
+    color: white;
 }
 
 h1 {
   text-align: center;
-  margin: 40px 0;
+  margin: 10px 0;
   font-size: 2.5rem;
-  color: #8b4513; /* deep brown wood color */
+  color: white; /* deep brown wood color */
 }
 
 .gallery-category {
@@ -141,13 +148,6 @@ h1 {
   color: #deb887;
 }
 
-/* Animation for wooden gradient movement */
-@keyframes woodShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
 footer {
     background-color: #444;  /* darker gray (cleaner look) */
     color: #f1f1f1;
@@ -155,3 +155,11 @@ footer {
     padding: 25px 0;
     font-size: 14px;
 }
+
+/* Animation for wooden gradient movement */
+@keyframes woodShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+

@@ -54,7 +54,7 @@ body {
 ========================= */
 
 .achievements-section {
-    background: url("images/achievementbg.jpg");
+    background: #721d1a;
     padding: 60px 20px;
     position: relative;
 }
@@ -144,7 +144,7 @@ body {
 }
 
 .modal-content img {
-    width: 100%;
+    width: 50%;
     border-radius: 10px;
     margin-bottom: 15px;
 }
