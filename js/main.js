@@ -127,12 +127,12 @@ const strandData = {
     STEM: {
         title: "STEM",
         img: "images/stemlogo.png",
-        desc: "The STEM strand focuses on Science, Technology, Engineering, and Mathematics. It prepares students for careers in engineering, medicine, IT, and research."
+        desc: "The STEM strand focuses on Scence, Technology, Engineering, and Mathematics. It prepares students for careers in engineering, medicine, and research."
     },
     TVL: {
         title: "TVL",
         img: "images/tvllogo.png",
-        desc: "The TVL strand offers hands-on technical and vocational skills such as culinary arts, electronics, and ICT, preparing students for employment or entrepreneurship."
+        desc: "The TVL strand offers hands-on technical and vocational skills such as CSS, CCS, Cookery, Automotive, Caregiver,HE"
     },
     ABM: {
         title: "ABM",
@@ -194,3 +194,47 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeModal();
 });
 
+// ===================== CURRICULUM TAB SLIDER =====================
+const tabButtons = document.querySelectorAll('.tab-btn');
+const gradeCards = document.querySelectorAll('.grade-card');
+
+let currentGrade = document.querySelector('.grade-card.active');
+
+// Function to switch grades
+tabButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const targetId = btn.getAttribute('data-grade');
+    const targetCard = document.getElementById(targetId);
+
+    if (targetCard === currentGrade) return; // Already active
+
+    // Remove active from all buttons
+    tabButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Slide out current grade
+    currentGrade.style.opacity = 0;
+    currentGrade.style.transform = "translateX(-50px)";
+    setTimeout(() => {
+      currentGrade.classList.remove('active');
+
+      // Slide in target grade
+      targetCard.classList.add('active');
+      targetCard.style.opacity = 0;
+      targetCard.style.transform = "translateX(50px)";
+      
+      setTimeout(() => {
+        targetCard.style.transition = "all 0.4s ease";
+        targetCard.style.opacity = 1;
+        targetCard.style.transform = "translateX(0)";
+      }, 50);
+
+      currentGrade = targetCard;
+    }, 200);
+  });
+});
+
+// Initialize all grade cards for smooth transition
+gradeCards.forEach(card => {
+  card.style.transition = "all 0.4s ease";
+});
